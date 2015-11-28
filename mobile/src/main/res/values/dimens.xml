@@ -3,6 +3,16 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    >
+
+    <!-- FAB BUTTON -->
+
+
+    <dimen name="fab_elevation">2dp</dimen>
+
+    <dimen name="fab_radius">56dp</dimen>
+
     <dimen name="header_height">300dp</dimen>
     <dimen name="mock_item_padding">10dp</dimen>
     <dimen name="mock_item_textsize">22dp</dimen>

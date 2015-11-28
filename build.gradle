@@ -5,7 +5,7 @@ buildscript {
         jcenter()
         mavenCentral()
         maven{
-            url "http://dl.bintray.com/journeyapps/maven"
+            url "http://mvnrepository.com/artifact/com.google.zxing/core/3.2.1"
         }
     }
     dependencies {
