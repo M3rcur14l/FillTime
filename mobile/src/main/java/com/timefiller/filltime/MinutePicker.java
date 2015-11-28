@@ -73,11 +73,20 @@ public class MinutePicker extends RelativeLayout {
         p.setColor(Color.parseColor("#8ACFE0"));
         c.drawCircle(centerX, centerY, 70, p);
         c.drawArc(circleBounds, -90, degree, true, p);
-
     }
 
     public void update(float x, float y) {
-        degree = (int) x * 360 / width;
+        double tx = x - centerX, ty = y - centerY;
+        double t_length = Math.sqrt(tx * tx + ty * ty);
+        if (x > centerX) {
+            double a = Math.acos(ty / t_length);
+            degree = 180 - ((int) Math.toDegrees(a));
+        } else {
+            double a = Math.acos(ty / t_length);
+            degree = 180 + ((int) Math.toDegrees(a));
+        }
+
+        //degree = (int) x * 360 / width;
         if (degree < 0)
             degree = 0;
         int minutes = degree / 6;
