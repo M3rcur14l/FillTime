@@ -43,4 +43,5 @@ dependencies {
     compile 'com.journeyapps:zxing-android-integration:2.0.1@aar'
     compile 'com.google.zxing:core:3.0.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.github.tittojose:timerangepicker-library:0.2'
 }
