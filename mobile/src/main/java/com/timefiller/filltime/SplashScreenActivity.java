@@ -21,12 +21,6 @@ public class SplashScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-        logo = (ImageView) findViewById(R.id.logo);
-        logo.setBackgroundResource(R.drawable.logo_animation);
-        AnimationDrawable frameAnimation = (AnimationDrawable) logo.getBackground();
-
-        // Start the animation (looped playback by default).
-        frameAnimation.start();
 
 
     }
