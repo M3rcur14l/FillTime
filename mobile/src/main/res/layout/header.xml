@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cyan_200"
+    android:orientation="horizontal">
+
+    <com.timefiller.filltime.views.TextViewCustom
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="right|center_vertical"
+
+        android:text="@string/header_title_fill"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <com.timefiller.filltime.views.TextViewCustom
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="left|center_vertical"
+        android:text="@string/header_title_time"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="normal" />
+
+</LinearLayout>

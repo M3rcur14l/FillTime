@@ -9,6 +9,8 @@
     <string name="food">FOOD</string>
     <string name="game">GAME</string>
     <string name="random">RANDOM</string>
+    <string name="header_title_fill">FILL</string>
+    <string name="header_title_time">TIME</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
