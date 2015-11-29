@@ -25,6 +25,7 @@
         android:textStyle="bold" />
 
     <View
+        android:id="@+id/slider_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/politecnico"/>

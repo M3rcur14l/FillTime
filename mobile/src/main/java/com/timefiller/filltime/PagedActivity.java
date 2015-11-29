@@ -23,8 +23,32 @@ public class PagedActivity extends AppCompatActivity {
 
         mPagedHeadList = (PagedHeadListView) findViewById(R.id.pagedHeadListView);
 
-        mPagedHeadList.addFragmentToHeader(new SliderFragment());
-        mPagedHeadList.addFragmentToHeader(new SliderFragment());
+        Bundle bundle = new Bundle();
+        String title = "ERA IL";
+        String subtitle = "1989";
+        String contentPath = "text/culture_politecnico.txt";
+        int drawable = R.drawable.politecnico;
+        bundle.putString("title", title);
+        bundle.putString("subtitle", subtitle);
+        bundle.putString("contentPath", contentPath);
+        bundle.putInt("drawable", drawable);
+        SliderFragment politecnicoFragment = new SliderFragment();
+        politecnicoFragment.setArguments(bundle);
+
+        bundle = new Bundle();
+        title = "APPASSIONATI DAL";
+        subtitle = "1899";
+        contentPath = "text/culture_milan.txt";
+        drawable = R.drawable.milan;
+        bundle.putString("title", title);
+        bundle.putString("subtitle", subtitle);
+        bundle.putString("contentPath", contentPath);
+        bundle.putInt("drawable", drawable);
+        SliderFragment milanFragment = new SliderFragment();
+        milanFragment.setArguments(bundle);
+
+        mPagedHeadList.addFragmentToHeader(politecnicoFragment);
+        mPagedHeadList.addFragmentToHeader(milanFragment);
 
         mPagedHeadList.setHeaderOffScreenPageLimit(2);
         mPagedHeadList.setHeaderPageTransformer(PageTransformerTypes.ZOOMOUT);

@@ -9,11 +9,16 @@
 
     <include layout="@layout/header" />
 
-    <com.timefiller.filltime.views.TextViewCustom
-        android:id="@+id/culture_text"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
-        android:textColor="@color/cyan_200" />
+        android:layout_height="wrap_content">
+
+        <com.timefiller.filltime.views.TextViewCustom
+            android:id="@+id/culture_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:textColor="@color/cyan_200" />
+    </ScrollView>
 
 </LinearLayout>
