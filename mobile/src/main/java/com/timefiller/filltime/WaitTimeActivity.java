@@ -1,5 +1,6 @@
 package com.timefiller.filltime;
 
+import android.content.Intent;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -16,9 +17,13 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.timefiller.filltime.Utili.Code;
+import com.timefiller.filltime.zxing.CaptureActivity;
 
 import java.io.UnsupportedEncodingException;
 
@@ -35,7 +40,8 @@ public class WaitTimeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wait_time);
-        RelativeLayout rootLayout = (RelativeLayout) findViewById(R.id.wait_time_rootLayout);
+        LinearLayout rootLayout = (LinearLayout) findViewById(R.id.wait_time_rootLayout);
+
         waitTimeTextView = (TextView) findViewById(R.id.minutes_header);
         initNFC();
 
@@ -53,6 +59,20 @@ public class WaitTimeActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+
+    public void onQrCodeClick(View v) {
+        Intent intent = new Intent(WaitTimeActivity.this, QrCodeActivity.class);
+        startActivity(intent);
+
+    }
+
+    public void onStartClick(View v) {
+
+        Intent intent = new Intent(WaitTimeActivity.this, MenuActivity.class);
+        startActivity(intent);
+        this.finish();
     }
 
     private void initNFC() {
@@ -141,4 +161,6 @@ public class WaitTimeActivity extends AppCompatActivity {
         super.onPause();
         nfcAdapter.disableForegroundDispatch(this);
     }
+
+
 }

@@ -230,8 +230,10 @@ public class CameraManager {
         } else { // back-facing
             result = (info.orientation - degrees + 360) % 360;
         }
-        orientation = result;
-        camera.setDisplayOrientation(result);
+
+            orientation = result;
+            camera.setDisplayOrientation(result);
+
     }
 
 
