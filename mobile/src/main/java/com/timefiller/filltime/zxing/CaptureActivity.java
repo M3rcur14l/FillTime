@@ -3,6 +3,7 @@ package com.timefiller.filltime.zxing;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -117,10 +118,8 @@ public class CaptureActivity extends Activity {
     private class OnDecoded implements CaptureHandler.OnDecodedCallback {
         @Override
         public void onDecoded(String decodedData) {
-            Intent resultIntent = new Intent();
-            resultIntent.putExtra(RESULT_IDENTIFIER, decodedData);
-            setResult(Activity.RESULT_OK, resultIntent);
-            finish();
+            Intent minutesIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(decodedData));
+            startActivity(minutesIntent);
         }
     }
 }

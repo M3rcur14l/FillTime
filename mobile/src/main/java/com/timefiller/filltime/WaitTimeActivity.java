@@ -69,8 +69,7 @@ public class WaitTimeActivity extends AppCompatActivity {
     public void onQrCodeClick(View v) {
 
         Intent intent = new Intent(WaitTimeActivity.this, CaptureActivity.class);
-
-        startActivityForResult(intent, 1);
+        startActivity(intent);
 
     }
 
@@ -124,6 +123,11 @@ public class WaitTimeActivity extends AppCompatActivity {
         if (Intent.ACTION_VIEW.equals(intent.getAction())) {
             Uri uri = intent.getData();
             waitTime = uri.getQueryParameter("waitTime");
+            waitTime = waitTime.trim();
+            saveData(waitTime);
+            minutePicker.update(waitTime);
+            minutePicker.invalidate();
+
         } else {
             try {
                 getTagNFC(intent);
