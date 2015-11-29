@@ -52,6 +52,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SplashScreenActivity"></activity>
+        <activity android:name=".CultureElementActivity"></activity>
     </application>
 
 </manifest>
