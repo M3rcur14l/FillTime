@@ -1,9 +1,11 @@
 package com.timefiller.filltime;
 
+import android.content.Context;
 import android.content.Intent;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
@@ -29,12 +31,14 @@ import java.io.UnsupportedEncodingException;
 
 public class WaitTimeActivity extends AppCompatActivity {
 
+    public static final String PREFS_NAME = "MyPrefsFile";
     private PendingIntent nfcPendingIntent;
     private IntentFilter[] intentFiltersArray;
     private NfcAdapter nfcAdapter;
     private String waitTime;
-    private TextView waitTimeTextView;
     private MinutePicker minutePicker;
+    private String minutes;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +46,6 @@ public class WaitTimeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_wait_time);
         LinearLayout rootLayout = (LinearLayout) findViewById(R.id.wait_time_rootLayout);
 
-        waitTimeTextView = (TextView) findViewById(R.id.minutes_header);
         initNFC();
 
         minutePicker = new MinutePicker(this);
@@ -55,6 +58,7 @@ public class WaitTimeActivity extends AppCompatActivity {
                 float x = event.getX();
                 float y = event.getY();
                 minutePicker.update(x, y);
+                saveData(minutePicker.getMinutesString());
                 minutePicker.invalidate();
                 return true;
             }
@@ -75,6 +79,14 @@ public class WaitTimeActivity extends AppCompatActivity {
         Intent intent = new Intent(WaitTimeActivity.this, MenuActivity.class);
         startActivity(intent);
         this.finish();
+    }
+
+
+    public void saveData(String value) {
+        SharedPreferences sharedPref = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(Code.MINUTE, value);
+        editor.commit();
     }
 
     private void initNFC() {
@@ -140,6 +152,8 @@ public class WaitTimeActivity extends AppCompatActivity {
                 for (NdefRecord record : records) {
                     byte[] payload = record.getPayload();
                     waitTime = new String(payload, "UTF-8");
+                    waitTime = waitTime.trim();
+                    saveData(waitTime);
                     minutePicker.update(waitTime);
                     minutePicker.invalidate();
                 }

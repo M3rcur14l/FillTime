@@ -1,15 +1,21 @@
 package com.timefiller.filltime;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.widget.TextView;
 
 import com.jorgecastilloprz.pagedheadlistview.PagedHeadListView;
 import com.jorgecastilloprz.pagedheadlistview.utils.PageTransformerTypes;
+import com.timefiller.filltime.Utili.Code;
+import com.timefiller.filltime.views.TextViewCustom;
 
 import java.util.ArrayList;
 
 public class PagedActivity extends AppCompatActivity {
+    public static final String PREFS_NAME = "MyPrefsFile";
 
     private PagedHeadListView mPagedHeadList;
 
@@ -22,6 +28,10 @@ public class PagedActivity extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
 
         mPagedHeadList = (PagedHeadListView) findViewById(R.id.pagedHeadListView);
+
+        TextView minuteTextView = (TextViewCustom) findViewById(R.id.minutes_header);
+        String currentValue = getData();
+        minuteTextView.setText(currentValue + "'");
 
         Bundle bundle = new Bundle();
         String title = "ERA IL";
@@ -58,5 +68,11 @@ public class PagedActivity extends AppCompatActivity {
         PageAdapter pageAdapter = new PageAdapter(this, R.layout.element_list_item, elementList);
         mPagedHeadList.setAdapter(pageAdapter);
         mPagedHeadList.setHeaderHeight((int) (metrics.heightPixels * 0.75f));
+    }
+
+
+    public String getData() {
+        SharedPreferences sharedPref = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+        return sharedPref.getString(Code.MINUTE, "0");
     }
 }
