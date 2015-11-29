@@ -41,9 +41,7 @@
         <activity android:name=".SliderActivity">
 
         </activity>
-        <activity android:name=".PagedActivity">
-
-        </activity>
+        <activity android:name=".PagedActivity"></activity>
         <activity
             android:name=".MenuActivity"
             android:screenOrientation="portrait">
