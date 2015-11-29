@@ -33,9 +33,16 @@ public class CaptureActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_camera);
         //setContentView(getContentView());
 
+
+    }
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
         initializeCamera();
         initializeCameraPreview();
         initializeBoundingView();

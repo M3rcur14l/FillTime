@@ -29,4 +29,8 @@ public class MenuActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    public void onRandomClick(View v) {
+
+    }
 }

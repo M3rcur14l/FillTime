@@ -4,6 +4,7 @@
     package="com.timefiller.filltime">
 
     <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -41,21 +42,22 @@
 
         </activity>
         <activity android:name=".PagedActivity">
+
+        </activity>
+        <activity android:name=".MenuActivity">
+
+        </activity>
+
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MenuActivity">
-
-        </activity>
-        <activity android:name=".SplashScreenActivity">
-
-        </activity>
-        <activity android:name=".CultureElementActivity">
-
-        </activity>
+        <activity android:name=".CultureElementActivity"></activity>
+        <activity android:name=".zxing.CaptureActivity"></activity>
+        <activity android:name=".QrCodeActivity"></activity>
     </application>
 
 </manifest>

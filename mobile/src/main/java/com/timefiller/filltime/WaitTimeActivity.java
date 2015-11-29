@@ -1,5 +1,6 @@
 package com.timefiller.filltime;
 
+import android.content.Intent;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -16,9 +17,13 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.timefiller.filltime.Utili.Code;
+import com.timefiller.filltime.zxing.CaptureActivity;
 
 import java.io.UnsupportedEncodingException;
 
@@ -35,7 +40,8 @@ public class WaitTimeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wait_time);
-        RelativeLayout rootLayout = (RelativeLayout) findViewById(R.id.wait_time_rootLayout);
+        LinearLayout rootLayout = (LinearLayout) findViewById(R.id.wait_time_rootLayout);
+
         waitTimeTextView = (TextView) findViewById(R.id.minutes_header);
         initNFC();
 
@@ -53,6 +59,22 @@ public class WaitTimeActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+
+    public void onQrCodeClick(View v) {
+
+        Intent intent = new Intent(WaitTimeActivity.this, CaptureActivity.class);
+
+        startActivityForResult(intent, 1);
+
+    }
+
+    public void onStartClick(View v) {
+
+        Intent intent = new Intent(WaitTimeActivity.this, MenuActivity.class);
+        startActivity(intent);
+        this.finish();
     }
 
     private void initNFC() {
@@ -140,5 +162,21 @@ public class WaitTimeActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         nfcAdapter.disableForegroundDispatch(this);
+    }
+
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+
+                Intent menuActivity = new Intent(WaitTimeActivity.this, MenuActivity.class);
+                startActivity(menuActivity);
+                WaitTimeActivity.this.finish();
+                // Handle successful scan
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+            }
+        }
     }
 }

@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -22,6 +23,24 @@ public class MinutePicker extends RelativeLayout {
 
     public MinutePicker(Context context) {
         super(context);
+        setWillNotDraw(false);
+        p = new Paint();
+        p.setColor(Color.LTGRAY);
+        minutesString = "00";
+        minutesTextView = new TextView(getContext());
+        minutesTextView.setTextSize(50);
+        minutesTextView.setText(minutesString);
+        minutesTextView.setTextColor(Color.WHITE);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+        params.addRule(CENTER_HORIZONTAL);
+        params.addRule(CENTER_VERTICAL);
+        addView(minutesTextView, params);
+    }
+
+    public MinutePicker(Context context, AttributeSet attrs) {
+        super(context, attrs);
         setWillNotDraw(false);
         p = new Paint();
         p.setColor(Color.LTGRAY);
