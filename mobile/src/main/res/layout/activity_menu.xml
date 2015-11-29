@@ -16,18 +16,12 @@
         android:id="@+id/btn_news"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:layout_weight="1"
         android:background="@drawable/menu_btn_selector"
         android:onClick="onMenuItemClick"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
 
         <ImageView
             android:id="@+id/img_news"
@@ -35,8 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
-            android:layout_weight="3"
-            android:src="@drawable/news" />
+            android:src="@drawable/news_120" />
 
         <com.timefiller.filltime.views.TextViewCustom
             android:layout_width="wrap_content"
@@ -48,12 +41,13 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
+
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/cyan_200"></View>
 
     <LinearLayout
         android:id="@+id/btn_read"
@@ -66,21 +60,14 @@
         android:onClick="onMenuItemClick"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
 
         <ImageView
             android:id="@+id/img_read"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-
             android:layout_marginTop="10dp"
-            android:layout_weight="3"
-            android:src="@drawable/book" />
+            android:src="@drawable/book_120" />
 
         <com.timefiller.filltime.views.TextViewCustom
             android:layout_width="wrap_content"
@@ -92,12 +79,13 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
+
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/cyan_200"></View>
 
     <LinearLayout
         android:id="@+id/btn_culture"
@@ -110,21 +98,14 @@
         android:onClick="onMenuItemClick"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
 
         <ImageView
             android:id="@+id/img_culture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-
             android:layout_marginTop="10dp"
-            android:layout_weight="3"
-            android:src="@drawable/culture" />
+            android:src="@drawable/culture_120" />
 
         <com.timefiller.filltime.views.TextViewCustom
             android:layout_width="wrap_content"
@@ -136,13 +117,12 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
-    </LinearLayout>
 
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/cyan_200"></View>
     <LinearLayout
         android:id="@+id/btn_food"
         android:layout_width="match_parent"
@@ -154,21 +134,14 @@
         android:onClick="onMenuItemClick"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
 
         <ImageView
             android:id="@+id/img_food"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-
             android:layout_marginTop="10dp"
-            android:layout_weight="3"
-            android:src="@drawable/food" />
+            android:src="@drawable/food_120" />
 
         <com.timefiller.filltime.views.TextViewCustom
             android:layout_width="wrap_content"
@@ -180,12 +153,13 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
+
     </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/cyan_200"></View>
+
 
     <LinearLayout
         android:id="@+id/btn_game"
@@ -198,21 +172,14 @@
         android:onClick="onMenuItemClick"
         android:orientation="horizontal">
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
 
         <ImageView
             android:id="@+id/img_game"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-
             android:layout_marginTop="10dp"
-            android:layout_weight="3"
-            android:src="@drawable/games" />
+            android:src="@drawable/games_120" />
 
         <com.timefiller.filltime.views.TextViewCustom
             android:layout_width="wrap_content"
@@ -224,12 +191,13 @@
             android:textSize="32sp"
             android:textStyle="bold" />
 
-        <View
-            android:layout_width="5dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.2"
-            android:background="@color/cyan_200"></View>
+
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/cyan_200"></View>
 
     <RelativeLayout
         android:layout_width="match_parent"
