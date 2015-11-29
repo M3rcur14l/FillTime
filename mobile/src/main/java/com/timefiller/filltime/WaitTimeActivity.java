@@ -63,8 +63,10 @@ public class WaitTimeActivity extends AppCompatActivity {
 
 
     public void onQrCodeClick(View v) {
-        Intent intent = new Intent(WaitTimeActivity.this, QrCodeActivity.class);
-        startActivity(intent);
+
+        Intent intent = new Intent(WaitTimeActivity.this, CaptureActivity.class);
+
+        startActivityForResult(intent, 1);
 
     }
 
@@ -162,5 +164,19 @@ public class WaitTimeActivity extends AppCompatActivity {
         nfcAdapter.disableForegroundDispatch(this);
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == 0) {
+            if (resultCode == RESULT_OK) {
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
 
+                Intent menuActivity = new Intent(WaitTimeActivity.this, MenuActivity.class);
+                startActivity(menuActivity);
+                WaitTimeActivity.this.finish();
+                // Handle successful scan
+            } else if (resultCode == RESULT_CANCELED) {
+                // Handle cancel
+            }
+        }
+    }
 }
