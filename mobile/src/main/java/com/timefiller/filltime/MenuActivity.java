@@ -77,26 +77,26 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void onMenuItemClick(View v) {
+        Intent intent;
         switch (v.getId()) {
             case R.id.btn_news:
                 break;
             case R.id.btn_read:
                 break;
             case R.id.btn_culture:
-                Intent intent = new Intent(MenuActivity.this, PagedActivity.class);
+                intent = new Intent(MenuActivity.this, PagedActivity.class);
                 startActivity(intent);
                 break;
             case R.id.btn_food:
                 break;
             case R.id.btn_game:
                 break;
-            case R.id.btn_random:
-                break;
         }
     }
 
     public void onRandomClick(View v) {
-
+        Intent intent = new Intent(MenuActivity.this, GameActivity.class);
+        startActivity(intent);
     }
 
 

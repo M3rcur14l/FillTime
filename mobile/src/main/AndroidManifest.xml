@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.NFC" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,9 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon,android:theme">
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".WaitTimeActivity">
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED" />
@@ -38,16 +37,11 @@
                     android:scheme="f" />
             </intent-filter>
         </activity>
-        <activity android:name=".SliderActivity">
-
-        </activity>
-        <activity android:name=".PagedActivity"></activity>
+        <activity android:name=".SliderActivity"></activity>
+        <activity android:name=".PagedActivity" />
         <activity
             android:name=".MenuActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
-
+            android:screenOrientation="portrait"></activity>
         <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -55,9 +49,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CultureElementActivity"></activity>
-        <activity android:name=".zxing.CaptureActivity"></activity>
-        <activity android:name=".QrCodeActivity"></activity>
+        <activity android:name=".CultureElementActivity" />
+        <activity android:name=".zxing.CaptureActivity" />
+        <activity android:name=".QrCodeActivity" />
+        <activity android:name=".GameActivity"></activity>
     </application>
 
 </manifest>
