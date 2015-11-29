@@ -97,4 +97,12 @@ public class MinutePicker extends RelativeLayout {
         minutesString = String.format("%02d", minutes);
         ((TextView) getChildAt(0)).setText(minutesString);
     }
+
+    public void update(String minutesString) {
+        minutesString = minutesString.trim();
+        int minutes = Integer.parseInt(minutesString);
+        degree = minutes * 6;
+        this.minutesString = String.format("%02d", minutes);
+        ((TextView) getChildAt(0)).setText(this.minutesString);
+    }
 }

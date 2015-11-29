@@ -1,10 +1,8 @@
 package com.timefiller.filltime;
 
-import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.Display;
 
 import com.jorgecastilloprz.pagedheadlistview.PagedHeadListView;
 import com.jorgecastilloprz.pagedheadlistview.utils.PageTransformerTypes;
@@ -35,6 +33,6 @@ public class PagedActivity extends AppCompatActivity {
 
         PageAdapter pageAdapter = new PageAdapter(this, R.layout.element_list_item, elementList);
         mPagedHeadList.setAdapter(pageAdapter);
-        mPagedHeadList.setHeaderHeight((int) (metrics.heightPixels * 0.8f));
+        mPagedHeadList.setHeaderHeight((int) (metrics.heightPixels * 0.75f));
     }
 }
